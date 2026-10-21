@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Authorized That? Governance for AI Agents | agenticentitlements.com</title>
+<meta name="description" content="AI agents are making autonomous decisions in enterprises. Who&#x27;s accountable? A governance framework for AI agent authorization and oversight.">
+<meta property="og:title" content="Who Authorized That? Governance for AI Agents">
+<meta property="og:description" content="AI agents are making autonomous decisions in enterprises. Who&#x27;s accountable? A governance framework for AI agent authorization and oversight.">
+<meta property="og:image" content="../images/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Who Authorized That? Governance for AI Agents", "description": "AI agents are making autonomous decisions in enterprises. Who's accountable? A governance framework for AI agent authorization and oversight.", "author": {"@type": "Organization", "name": "Prime Domain Capital"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a14;--bg2:#101022;--violet:#8b5cf6;--cyan:#22d3ee;--ink:#f4f4f8;--muted:#9a9ab0;--line:rgba(139,92,246,.22)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(10,10,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .brand{font-weight:700;letter-spacing:.14em;font-size:13px;text-transform:uppercase}
+nav .brand span{color:var(--cyan)}
+nav a.cta{background:var(--violet);color:#fff;text-decoration:none;padding:12px 28px;border-radius:100px;font-weight:600;font-size:14px;transition:.3s}
+nav a.cta:hover{background:var(--cyan);color:#06121a;transform:translateY(-2px)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover;opacity:.34;transform:scale(1.08)}
+#net{position:absolute;inset:0;z-index:1}
+.hero-inner{position:relative;z-index:2;max-width:1000px;padding:120px 32px 80px}
+.kicker{font-family:'IBM Plex Mono',monospace;color:var(--cyan);letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:28px}
+h1{font-size:clamp(44px,7.5vw,104px);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:28px}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(17px,2.2vw,22px);color:var(--muted);max-width:720px;margin:0 auto 44px;line-height:1.65}
+.price-row{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap}
+.price{font-size:40px;font-weight:700}
+.price small{font-size:14px;color:var(--muted);font-weight:400;display:block;letter-spacing:.1em;text-transform:uppercase}
+.btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;padding:18px 52px;border-radius:100px;font-weight:700;font-size:17px;transition:.3s;border:none;cursor:pointer}
+.btn:hover{background:var(--cyan);color:#06121a;transform:translateY(-3px);box-shadow:0 20px 50px rgba(34,211,238,.35)}
+section{padding:110px 48px;max-width:1240px;margin:0 auto}
+.sec-label{font-family:'IBM Plex Mono',monospace;color:var(--violet);letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:20px}
+h2{font-size:clamp(32px,4.5vw,58px);font-weight:700;line-height:1.1;margin-bottom:28px;letter-spacing:-.01em}
+.prose{color:var(--muted);font-size:18px;line-height:1.8;max-width:760px}
+.prose strong{color:var(--ink)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px}
+.two-col img{width:100%;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:64px}
+.stat{background:var(--bg2);padding:52px 32px;text-align:center}
+.stat .num{font-size:52px;font-weight:700;color:var(--cyan)}
+.stat .lbl{color:var(--muted);margin-top:12px;font-size:15px;line-height:1.5}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.gallery figure{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/3}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.07)}
+.gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(5,5,12,.9));font-size:14px;color:#dfe}
+.buyers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.buyer{border:1px solid var(--line);border-radius:18px;padding:40px 32px;background:var(--bg2);transition:.3s}
+.buyer:hover{border-color:var(--violet);transform:translateY(-6px)}
+.buyer h3{font-size:21px;margin-bottom:14px;color:var(--cyan)}
+.buyer p{color:var(--muted);font-size:15.5px;line-height:1.7}
+.cta-band{text-align:center;background:radial-gradient(ellipse at center,rgba(139,92,246,.16),transparent 70%);border:1px solid var(--line);border-radius:28px;padding:90px 40px;margin-top:40px}
+.cta-band .domain{font-family:'IBM Plex Mono',monospace;font-size:clamp(24px,4vw,44px);color:var(--cyan);margin-bottom:16px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:56px 48px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--cyan);text-decoration:none}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.two-col,.buyers,.gallery{grid-template-columns:1fr}section{padding:70px 24px}nav{padding:16px 20px}.stats{grid-template-columns:1fr}}
+</style>
+<style>
+.article-hero{max-width:900px;margin:0 auto;padding:9rem 3rem 2.5rem;position:relative;z-index:1}
+.article-hero h1{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.12;letter-spacing:-.015em;margin:0 0 1.2rem}
+.article-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.article-wrap{max-width:720px;margin:0 auto;padding:1rem 3rem 4rem;position:relative;z-index:1}
+.article-body{font-size:1.06rem;line-height:1.85;color:#c9c9da}
+.article-body p{margin:0 0 1.6rem}
+.article-body h2{font-size:1.7rem;margin:3rem 0 1.2rem}
+.article-body strong{color:var(--ink)}
+blockquote.pull{font-size:1.4rem;line-height:1.6;color:var(--ink);border:1px solid var(--line);border-left:3px solid var(--cyan);background:var(--bg2);border-radius:0 12px 12px 0;padding:1.6rem 1.8rem;margin:2.6rem 0}
+.callout{background:radial-gradient(ellipse at center,rgba(139,92,246,.14),transparent 75%),var(--bg2);border:1px solid var(--line);border-radius:20px;padding:2.8rem;text-align:center;margin:3.5rem auto;max-width:720px;position:relative;z-index:1}
+.callout p{font-size:1.18rem;line-height:1.7;color:var(--ink);margin-bottom:1.8rem}
+.card-link{color:var(--cyan);font-weight:600;text-decoration:none;font-size:.9rem;letter-spacing:.06em}
+.card-link:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<canvas id="net" style="position:fixed;inset:0;z-index:0;pointer-events:none"></canvas>
+<nav><a class="brand" href="../index.html" style="text-decoration:none">PRIME DOMAIN <span>CAPITAL</span></a><a class="cta" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now — $12,000</a></nav>
+
+<header class="article-hero reveal">
+  <div class="sec-label">// Insights</div>
+  <h1>Who Authorized That? Governance for AI Agents</h1>
+  <div class="article-meta">AI agent governance &middot; 5 min read</div>
+</header>
+
+<div class="article-wrap reveal">
+  <div class="article-body">
+<p>When a human employee wires $500,000 to the wrong account, the investigation follows a clear chain: who authorized the transfer, what were their limits, who approved the exception? The answers exist in approval workflows, delegation matrices, and audit logs. Accountability is structural.</p>
+<p>When an AI agent initiates the same transfer — because it interpreted an instruction creatively, because its training data suggested it, because a prompt injection reframed its objectives — the investigation hits a wall. Who authorized it? The developer who deployed the agent six months ago? The manager who approved the AI pilot? The vendor whose model generated the action? The agent itself?</p>
+<p>This accountability vacuum is the governance crisis of enterprise AI. And it is getting worse as agents move from pilots to production, from read-only to read-write, from supervised to autonomous.</p>
+<h2>The Accountability Stack</h2>
+<p>Effective AI agent governance requires a clear accountability stack — defined before deployment, not reconstructed after an incident.</p>
+<p><strong>The deploying executive</strong> owns the decision to deploy. Just as a business leader who approves a new trading strategy owns its outcomes, the executive who authorizes an AI agent deployment owns the consequences of that agent&#x27;s actions within its designed scope. This accountability cannot be delegated to IT or to the vendor. It sits with the business owner who decided the capability was worth the risk.</p>
+<p><strong>The agent owner</strong> — a named individual, not a team — owns the agent&#x27;s ongoing behavior. This role is analogous to a system owner in traditional IT governance: accountable for the agent&#x27;s configuration, its entitlement scope, its monitoring, and its decommissioning. When the agent&#x27;s behavior drifts, the agent owner is the first call. Organizations that leave this role undefined discover, after an incident, that everyone assumed someone else was watching.</p>
+<p><strong>The model vendor</strong> owns the model&#x27;s general capabilities and safety properties — but not the specific deployment&#x27;s actions. This boundary is critical and widely misunderstood. Anthropic, OpenAI, and Google are accountable for building models that behave safely in general. They are not accountable for what your agent does with your data in your environment under your mandate. Conflating these accountabilities lets everyone point fingers and no one take responsibility.</p>
+<p><strong>The oversight function</strong> — typically the AI governance board, risk committee, or (in regulated industries) the model risk management function — owns the framework: the policies that define what agents may do, the approval processes for new deployments, and the audit cadence. They don&#x27;t approve individual agent actions. They approve the system within which agents operate.</p>
+<h2>The Authorization Chain</h2>
+<blockquote class="pull">&quot;Every autonomous action should trace to a human authorization. Not necessarily a human who approved that specific action — but a human who authorized the scope within which the action occurred.&quot;</blockquote>
+<p>The practical implementation is an authorization chain — a documented linkage from each agent action back to human decisions:</p>
+<p>1. <strong>Deployment authorization</strong>: a human approved this agent&#x27;s existence, its mandate, and its entitlement scope. Documented, signed, reviewable. 2. <strong>Mandate definition</strong>: a human (or human committee) defined what the agent is permitted to do — the systems it may access, the actions it may take, the boundaries it may not cross. 3. <strong>Tier escalation</strong>: for actions above the agent&#x27;s autonomous tier, a human approved the specific action or the class of actions. The approval is logged with full context. 4. <strong>Exception handling</strong>: when the agent encounters situations outside its mandate, the escalation path routes to a human — not to the agent&#x27;s own judgment about whether to proceed.</p>
+<p>This chain doesn&#x27;t mean humans approve every action — that would defeat the purpose of autonomy. It means every action occurs within a scope that a human defined, under conditions a human established, with oversight a human designed. The autonomy is real but bounded. The bounds are human.</p>
+<h2>Governance Artifacts That Matter</h2>
+<p>Boards and regulators are converging on a set of expected governance artifacts for AI agent deployments. Organizations should produce these proactively:</p>
+<p><strong>Agent registry.</strong> A complete inventory of deployed agents: what each does, who owns it, what systems it accesses, when it was last reviewed. Most organizations cannot produce this today. Regulators will soon require it.</p>
+<p><strong>Risk assessment per agent.</strong> Not a generic AI risk assessment — a specific analysis per agent covering: what could go wrong, what the blast radius is, what controls mitigate the risk, and what residual risk the business accepts. Updated when the agent&#x27;s mandate, model, or environment changes.</p>
+<p><strong>Incident response plan.</strong> When an agent misbehaves — and eventually one will — the response plan should specify: who gets notified, how the agent is contained (kill switch procedures), how the blast radius is assessed, and how the root cause is determined. Tabletop exercises for agent incidents, analogous to cybersecurity incident response drills, are emerging as best practice.</p>
+<p><strong>Audit trail.</strong> Immutable, comprehensive logging of agent actions, entitlement evaluations, and human authorizations. This isn&#x27;t just for forensics — it&#x27;s the evidence that the governance framework actually operates. An auditor&#x27;s first question will be &quot;show me the logs.&quot; The second will be &quot;show me that someone reviews them.&quot;</p>
+<h2>The Board Conversation</h2>
+<p>For directors, the governance question distills to three inquiries of management: What AI agents are operating in our environment with the ability to take autonomous actions? What is the authorization framework governing those actions? And who is accountable when — not if — an agent exceeds its intended scope?</p>
+<p>Management teams that can answer these crisply are governing well. Those that respond with generalities about &quot;responsible AI principles&quot; are not. The difference will become visible the first time something goes wrong — and in the regulatory examination that follows.</p>
+<p>The accountability vacuum around AI agents is a temporary condition. Regulation, litigation, and board pressure will fill it. Organizations that build governance proactively will experience this as validation. Those that wait will experience it as crisis.</p>
+  </div>
+</div>
+
+<div class="callout reveal">
+  <p>AgenticEntitlements.com is available for acquisition by AI infrastructure companies, identity platforms, and cybersecurity firms building the agent-permissions layer.</p>
+  <a class="btn" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now on Afternic</a>
+</div>
+
+<section class="reveal">
+<div class="sec-label">// 04 — Who buys this</div>
+<h2>The companies already building toward it.</h2>
+<div class="buyers">
+<div class="buyer"><h3>Identity platforms</h3><p>Okta, Auth0, and their challengers are extending workforce identity to non-human identities. The agent entitlement category is the natural product surface.</p></div>
+<div class="buyer"><h3>AI infrastructure</h3><p>Agent frameworks and orchestration layers need a permissions story for enterprise buyers. Owning the category name shortens every sales cycle.</p></div>
+<div class="buyer"><h3>Governance &amp; compliance</h3><p>Regulators will ask who authorized the agent. The company holding this domain is positioned as the answer.</p></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="cta-band">
+<div class="sec-label">// 05 — Acquisition</div>
+<div class="domain">agenticentitlements.com</div>
+<p class="prose" style="margin:0 auto 36px;text-align:center">Offered at a fixed Buy Now price of <strong>$12,000</strong>. Secure transfer via Escrow.com. Offered by Prime Domain Capital.</p>
+<a class="btn" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now — $12,000</a>
+<p class="prose" style="margin-top:28px;text-align:center;font-size:15px">Questions? <a href="mailto:info@primedomaincapital.com" style="color:var(--cyan)">info@primedomaincapital.com</a></p>
+</div>
+</section>
+
+<footer>
+<p>Offered by <strong>Prime Domain Capital</strong> · Private holder of category-defining .com domains</p>
+<p style="margin-top:12px"><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p>
+</footer>
+
+<script>
+// Canvas: permission-node network
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,pts=[];
+function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
+size();addEventListener('resize',size);
+for(let i=0;i<70;i++)pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0009,vy:(Math.random()-.5)*.0009,r:Math.random()*2+1});
+(function tick(){cx.clearRect(0,0,W,H);
+pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>1)p.vx*=-1;if(p.y<0||p.y>1)p.vy*=-1;});
+cx.strokeStyle='rgba(139,92,246,.16)';cx.lineWidth=1;
+for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<.13){cx.beginPath();cx.moveTo(a.x*W,a.y*H);cx.lineTo(b.x*W,b.y*H);cx.stroke();}}
+pts.forEach(p=>{cx.fillStyle='rgba(34,211,238,.75)';cx.beginPath();cx.arc(p.x*W,p.y*H,p.r,0,7);cx.fill();});
+requestAnimationFrame(tick);})();
+// Parallax hero
+addEventListener('scroll',()=>{document.getElementById('heroBg').style.transform=`scale(1.08) translateY(${scrollY*.22}px)`;},{passive:true});
+// Reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.count,s=el.dataset.suffix||'',p=el.dataset.prefix||'';let s0=null;function step(ts){if(!s0)s0=ts;const k=Math.min((ts-s0)/1400,1);el.textContent=p+Math.round(t*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(step);}requestAnimationFrame(step);cio.unobserve(el);}),{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

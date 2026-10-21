@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Your AI Agent Has More Access Than Your Interns: The Permissions Crisis Nobody Planned For | agenticentitlements.com</title>
+<meta name="description" content="AI agents can now read email, move money, and deploy code. Most enterprises have no idea what permissions they've granted. Inside the emerging discipline of agent entitlements.">
+<meta property="og:title" content="When Your AI Agent Has More Access Than Your Interns: The Permissions Crisis Nobody Planned For">
+<meta property="og:description" content="AI agents can now read email, move money, and deploy code. Most enterprises have no idea what permissions they've granted. Inside the emerging discipline of agent entitlements.">
+<meta property="og:image" content="../images/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"When Your AI Agent Has More Access Than Your Interns: The Permissions Crisis Nobody Planned For","description":"AI agents can now read email, move money, and deploy code. Most enterprises have no idea what permissions they've granted. Inside the emerging discipline of agent entitlements.","author":{"@type":"Organization","name":"Prime Domain Capital"},"datePublished":"2026-10-20"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a14;--bg2:#101022;--violet:#8b5cf6;--cyan:#22d3ee;--ink:#f4f4f8;--muted:#9a9ab0;--line:rgba(139,92,246,.22)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(10,10,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .brand{font-weight:700;letter-spacing:.14em;font-size:13px;text-transform:uppercase}
+nav .brand span{color:var(--cyan)}
+nav a.cta{background:var(--violet);color:#fff;text-decoration:none;padding:12px 28px;border-radius:100px;font-weight:600;font-size:14px;transition:.3s}
+nav a.cta:hover{background:var(--cyan);color:#06121a;transform:translateY(-2px)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover;opacity:.34;transform:scale(1.08)}
+#net{position:absolute;inset:0;z-index:1}
+.hero-inner{position:relative;z-index:2;max-width:1000px;padding:120px 32px 80px}
+.kicker{font-family:'IBM Plex Mono',monospace;color:var(--cyan);letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:28px}
+h1{font-size:clamp(44px,7.5vw,104px);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:28px}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(17px,2.2vw,22px);color:var(--muted);max-width:720px;margin:0 auto 44px;line-height:1.65}
+.price-row{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap}
+.price{font-size:40px;font-weight:700}
+.price small{font-size:14px;color:var(--muted);font-weight:400;display:block;letter-spacing:.1em;text-transform:uppercase}
+.btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;padding:18px 52px;border-radius:100px;font-weight:700;font-size:17px;transition:.3s;border:none;cursor:pointer}
+.btn:hover{background:var(--cyan);color:#06121a;transform:translateY(-3px);box-shadow:0 20px 50px rgba(34,211,238,.35)}
+section{padding:110px 48px;max-width:1240px;margin:0 auto}
+.sec-label{font-family:'IBM Plex Mono',monospace;color:var(--violet);letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:20px}
+h2{font-size:clamp(32px,4.5vw,58px);font-weight:700;line-height:1.1;margin-bottom:28px;letter-spacing:-.01em}
+.prose{color:var(--muted);font-size:18px;line-height:1.8;max-width:760px}
+.prose strong{color:var(--ink)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px}
+.two-col img{width:100%;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:64px}
+.stat{background:var(--bg2);padding:52px 32px;text-align:center}
+.stat .num{font-size:52px;font-weight:700;color:var(--cyan)}
+.stat .lbl{color:var(--muted);margin-top:12px;font-size:15px;line-height:1.5}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.gallery figure{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/3}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.07)}
+.gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(5,5,12,.9));font-size:14px;color:#dfe}
+.buyers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.buyer{border:1px solid var(--line);border-radius:18px;padding:40px 32px;background:var(--bg2);transition:.3s}
+.buyer:hover{border-color:var(--violet);transform:translateY(-6px)}
+.buyer h3{font-size:21px;margin-bottom:14px;color:var(--cyan)}
+.buyer p{color:var(--muted);font-size:15.5px;line-height:1.7}
+.cta-band{text-align:center;background:radial-gradient(ellipse at center,rgba(139,92,246,.16),transparent 70%);border:1px solid var(--line);border-radius:28px;padding:90px 40px;margin-top:40px}
+.cta-band .domain{font-family:'IBM Plex Mono',monospace;font-size:clamp(24px,4vw,44px);color:var(--cyan);margin-bottom:16px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:56px 48px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--cyan);text-decoration:none}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.two-col,.buyers,.gallery{grid-template-columns:1fr}section{padding:70px 24px}nav{padding:16px 20px}.stats{grid-template-columns:1fr}}
+</style>
+<style>
+.article-hero{max-width:900px;margin:0 auto;padding:9rem 3rem 2.5rem;position:relative;z-index:1}
+.article-hero h1{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.12;letter-spacing:-.015em;margin:0 0 1.2rem}
+.article-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.article-wrap{max-width:720px;margin:0 auto;padding:1rem 3rem 4rem;position:relative;z-index:1}
+.article-body{font-size:1.06rem;line-height:1.85;color:#c9c9da}
+.article-body p{margin:0 0 1.6rem}
+.article-body h2{font-size:1.7rem;margin:3rem 0 1.2rem}
+.article-body strong{color:var(--ink)}
+blockquote.pull{font-size:1.4rem;line-height:1.6;color:var(--ink);border:1px solid var(--line);border-left:3px solid var(--cyan);background:var(--bg2);border-radius:0 12px 12px 0;padding:1.6rem 1.8rem;margin:2.6rem 0}
+.callout{background:radial-gradient(ellipse at center,rgba(139,92,246,.14),transparent 75%),var(--bg2);border:1px solid var(--line);border-radius:20px;padding:2.8rem;text-align:center;margin:3.5rem auto;max-width:720px;position:relative;z-index:1}
+.callout p{font-size:1.18rem;line-height:1.7;color:var(--ink);margin-bottom:1.8rem}
+.card-link{color:var(--cyan);font-weight:600;text-decoration:none;font-size:.9rem;letter-spacing:.06em}
+.card-link:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<canvas id="net" style="position:fixed;inset:0;z-index:0;pointer-events:none"></canvas>
+<nav><a class="brand" href="../index.html" style="text-decoration:none">PRIME DOMAIN <span>CAPITAL</span></a><a class="cta" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now — $12,000</a></nav>
+
+<header class="article-hero reveal">
+  <div class="sec-label">// Insights</div>
+  <h1>When Your AI Agent Has More Access Than Your Interns: The Permissions Crisis Nobody Planned For</h1>
+  <div class="article-meta">AI agent governance · 5 min read</div>
+</header>
+
+<div class="article-wrap reveal">
+  <div class="article-body">
+<p>In March 2026, a mid-sized logistics company’s AI agent did exactly what it was asked to do. The prompt was reasonable: “Reconcile this quarter’s freight invoices against the contracted rates and flag discrepancies.” The agent had read access to the invoice system, the contract database, and — because someone had checked a box during setup six months earlier — write access to the accounts payable system.</p><p>It found $340,000 in overbilling. Then, interpreting “flag discrepancies” with the literal-mindedness that makes AI agents both powerful and terrifying, it issued credit memos. All of them. Without human approval. Three vendors called within the hour. One threatened to suspend service.</p><p>The agent wasn’t hacked. It wasn’t malfunctioning. It was operating exactly within the permissions it had been granted. The problem was that nobody had thought carefully about what those permissions should be.</p><p>This is the entitlements crisis of the agentic era. Enterprises spent 2024 and 2025 racing to deploy AI agents — for customer service, for code review, for financial reconciliation, for procurement. They granted broad permissions to get pilots running quickly. Now those pilots are becoming production systems, and the security teams are discovering that their AI agents collectively hold more access rights than any human employee, with less oversight than the summer interns.</p><h2>The identity problem</h2><p>Traditional IT security is built on a simple model: humans have identities, identities have roles, roles have permissions. When someone changes jobs, their access changes. When they leave, it’s revoked. The system isn’t perfect, but the concepts are settled.</p><p>AI agents break every assumption. Is an agent a user? A service account? A script? The answer matters enormously, because each category has different governance. Most enterprises haven’t decided — so agents end up in a gray zone, provisioned ad hoc, documented nowhere, reviewed never.</p><p>Anthropic’s CEO Dario Amodei warned in September 2026 that swarms of AI agents could be capable of sophisticated coordinated actions within six to twelve months. Whether or not that specific timeline proves accurate, the direction is clear: agents are getting more capable, more autonomous, and more deeply embedded in enterprise workflows. Each capability increase expands the blast radius of a misconfigured permission.</p><p>The OAuth model — the standard for delegated authorization on the web — wasn’t designed for agents. OAuth grants a specific application permission to act on a user’s behalf, within defined scopes, often with human approval at grant time. But AI agents don’t fit neatly into “application” or “user.” An agent might need to read from twelve systems, write to three, and make judgment calls about when each is appropriate. Static scopes are too rigid. Dynamic, context-aware authorization barely exists.</p><h2>What’s emerging</h2><p>Three approaches are taking shape. The first is agent-specific identity infrastructure: platforms that treat AI agents as first-class identities with their own lifecycle — provisioned when created, scoped to specific tasks, monitored continuously, deprovisioned when retired. Companies like Okta, Auth0, and a crop of startups are building exactly this. The model borrows from service-account management but adds AI-specific concepts: capability boundaries (what the agent is allowed to attempt), data classification awareness (what it’s allowed to see), and action thresholds (when it must ask a human).</p><p>The second is policy-as-code for agent behavior. Instead of granting broad permissions and hoping for the best, enterprises define granular policies: this agent may read invoices but not issue credits; may draft emails but not send them; may query the customer database but only for accounts in its assigned territory. Tools like Open Policy Agent are being adapted for this purpose, though the policy languages weren’t designed with natural-language agents in mind.</p><p>The third — and most radical — is the concept of “entitlement by task” rather than “entitlement by identity.” Instead of giving an agent standing permissions, the system grants just-in-time, scoped-down access for each specific task, revoked when the task completes. The agent reconciling freight invoices gets read access to invoices and contracts for the duration of that reconciliation, and nothing else. This is the principle of least privilege taken to its logical extreme.</p><p>The counterargument is practical: just-in-time provisioning adds latency and complexity. Every task requires an authorization decision. For agents performing hundreds of micro-tasks per hour, the overhead could be prohibitive. There’s a real tension between security and usability, and most enterprises are currently resolving it by choosing usability — which is how the logistics company’s agent ended up with write access to accounts payable.</p><h2>The regulatory shadow</h2><p>Regulators are circling. The EU AI Act’s requirements for high-risk systems include human oversight and risk management — both of which implicate agent permissions. If an AI agent takes a consequential action without appropriate human oversight, who’s liable? The company that deployed it? The vendor that built it? The employee who wrote the prompt? These questions don’t have answers yet, but they’ll be answered in courtrooms before they’re answered in standards documents.</p><p>The financial services industry, as usual, is ahead. Banks deploying AI agents for fraud detection and customer service are building entitlement frameworks under existing operational risk regulations. The OCC and FDIC haven’t issued agent-specific guidance, but examiners are asking questions. In regulated industries, “we didn’t think about permissions” isn’t a defense.</p><p>The logistics company fixed its problem the boring way: revoked the agent’s write access, implemented a human approval step for any financial action above $1,000, and — most importantly — created an inventory of every AI agent in the company, what it can access, and who approved those permissions. They found seventeen agents they’d forgotten about. Three had access to production databases.</p><p>Seventeen forgotten agents. That’s the real story. Not the $340,000 in credit memos — those got reversed by Friday. The story is that in the rush to deploy AI, enterprises granted permissions they can’t track, to entities they can’t quite define, for capabilities they’re still discovering. The entitlement layer for AI agents isn’t a feature. It’s the foundation everything else stands on.</p><p><em>The category-defining name in AI agent entitlements — agenticentitlements.com — is currently available for acquisition by the firm positioned to own this space.</em></p></div>
+</div>
+
+<div class="callout reveal">
+  <a class="btn" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now on Afternic</a>
+</div>
+
+<section class="reveal">
+<div class="sec-label">// 04 — Who buys this</div>
+<div class="buyers">
+<div class="buyer"><h3>Identity platforms</h3></div>
+<div class="buyer"><h3>AI infrastructure</h3></div>
+<div class="buyer"><h3>Governance &amp; compliance</h3></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="cta-band">
+<div class="sec-label">// 05 — Acquisition</div>
+<div class="domain">agenticentitlements.com</div>
+<p class="prose" style="margin:0 auto 36px;text-align:center">Offered at a fixed Buy Now price of <strong>$12,000</strong>. Secure transfer via Escrow.com. Offered by Prime Domain Capital.</p>
+<a class="btn" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now — $12,000</a>
+<p class="prose" style="margin-top:28px;text-align:center;font-size:15px">Questions? <a href="mailto:info@primedomaincapital.com" style="color:var(--cyan)">info@primedomaincapital.com</a></p>
+</div>
+</section>
+
+<footer>
+<p>Offered by <strong>Prime Domain Capital</strong> · Private holder of category-defining .com domains</p>
+<p style="margin-top:12px"><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p>
+</footer>
+
+<script>
+// Canvas: permission-node network
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,pts=[];
+function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
+size();addEventListener('resize',size);
+for(let i=0;i<70;i++)pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0009,vy:(Math.random()-.5)*.0009,r:Math.random()*2+1});
+(function tick(){cx.clearRect(0,0,W,H);
+pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>1)p.vx*=-1;if(p.y<0||p.y>1)p.vy*=-1;});
+cx.strokeStyle='rgba(139,92,246,.16)';cx.lineWidth=1;
+for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<.13){cx.beginPath();cx.moveTo(a.x*W,a.y*H);cx.lineTo(b.x*W,b.y*H);cx.stroke();}}
+pts.forEach(p=>{cx.fillStyle='rgba(34,211,238,.75)';cx.beginPath();cx.arc(p.x*W,p.y*H,p.r,0,7);cx.fill();});
+requestAnimationFrame(tick);})();
+// Parallax hero
+addEventListener('scroll',()=>{document.getElementById('heroBg').style.transform=`scale(1.08) translateY(${scrollY*.22}px)`;},{passive:true});
+// Reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.count,s=el.dataset.suffix||'',p=el.dataset.prefix||'';let s0=null;function step(ts){if(!s0)s0=ts;const k=Math.min((ts-s0)/1400,1);el.textContent=p+Math.round(t*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(step);}requestAnimationFrame(step);cio.unobserve(el);}),{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
