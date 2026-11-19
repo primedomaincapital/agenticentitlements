@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent Liability: Who Is Responsible When an Autonomous System Acts? | agenticentitlements.com</title>
+<meta name="description" content="Air Canada&#x27;s chatbot invented a refund policy and the airline paid $812.02 for it. Courts on two continents now agree: the deployer owns what the agent does — and the entitlement log is the evidence.">
+<link rel="canonical" href="https://agenticentitlements.com/insights/article8">
+<meta property="og:title" content="AI Agent Liability: Who Is Responsible When an Autonomous System Acts?">
+<meta property="og:description" content="Air Canada&#x27;s chatbot invented a refund policy and the airline paid $812.02 for it. Courts on two continents now agree: the deployer owns what the agent does — and the entitlement log is the evidence.">
+<meta property="og:url" content="https://agenticentitlements.com/insights/article8">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI Agent Liability: Who Is Responsible When an Autonomous System Acts?", "description": "Air Canada's chatbot invented a refund policy and the airline paid $812.02 for it. Courts on two continents now agree: the deployer owns what the agent does — and the entitlement log is the evidence.", "author": {"@type": "Organization", "name": "Prime Domain Capital"}, "publisher": {"@type": "Organization", "name": "Prime Domain Capital"}, "datePublished": "2026-11-19", "mainEntityOfPage": "https://agenticentitlements.com/insights/article8"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a14;--bg2:#101022;--violet:#8b5cf6;--cyan:#22d3ee;--ink:#f4f4f8;--muted:#9a9ab0;--line:rgba(139,92,246,.22)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(10,10,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .brand{font-weight:700;letter-spacing:.14em;font-size:13px;text-transform:uppercase}
+nav .brand span{color:var(--cyan)}
+nav a.cta{background:var(--violet);color:#fff;text-decoration:none;padding:12px 28px;border-radius:100px;font-weight:600;font-size:14px;transition:.3s}
+nav a.cta:hover{background:var(--cyan);color:#06121a;transform:translateY(-2px)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover;opacity:.34;transform:scale(1.08)}
+#net{position:absolute;inset:0;z-index:1}
+.hero-inner{position:relative;z-index:2;max-width:1000px;padding:120px 32px 80px}
+.kicker{font-family:'IBM Plex Mono',monospace;color:var(--cyan);letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:28px}
+h1{font-size:clamp(44px,7.5vw,104px);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:28px}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(17px,2.2vw,22px);color:var(--muted);max-width:720px;margin:0 auto 44px;line-height:1.65}
+.price-row{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap}
+.price{font-size:40px;font-weight:700}
+.price small{font-size:14px;color:var(--muted);font-weight:400;display:block;letter-spacing:.1em;text-transform:uppercase}
+.btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;padding:18px 52px;border-radius:100px;font-weight:700;font-size:17px;transition:.3s;border:none;cursor:pointer}
+.btn:hover{background:var(--cyan);color:#06121a;transform:translateY(-3px);box-shadow:0 20px 50px rgba(34,211,238,.35)}
+section{padding:110px 48px;max-width:1240px;margin:0 auto}
+.sec-label{font-family:'IBM Plex Mono',monospace;color:var(--violet);letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:20px}
+h2{font-size:clamp(32px,4.5vw,58px);font-weight:700;line-height:1.1;margin-bottom:28px;letter-spacing:-.01em}
+.prose{color:var(--muted);font-size:18px;line-height:1.8;max-width:760px}
+.prose strong{color:var(--ink)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px}
+.two-col img{width:100%;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:64px}
+.stat{background:var(--bg2);padding:52px 32px;text-align:center}
+.stat .num{font-size:52px;font-weight:700;color:var(--cyan)}
+.stat .lbl{color:var(--muted);margin-top:12px;font-size:15px;line-height:1.5}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.gallery figure{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/3}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.07)}
+.gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(5,5,12,.9));font-size:14px;color:#dfe}
+.buyers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.buyer{border:1px solid var(--line);border-radius:18px;padding:40px 32px;background:var(--bg2);transition:.3s}
+.buyer:hover{border-color:var(--violet);transform:translateY(-6px)}
+.buyer h3{font-size:21px;margin-bottom:14px;color:var(--cyan)}
+.buyer p{color:var(--muted);font-size:15.5px;line-height:1.7}
+.cta-band{text-align:center;background:radial-gradient(ellipse at center,rgba(139,92,246,.16),transparent 70%);border:1px solid var(--line);border-radius:28px;padding:90px 40px;margin-top:40px}
+.cta-band .domain{font-family:'IBM Plex Mono',monospace;font-size:clamp(24px,4vw,44px);color:var(--cyan);margin-bottom:16px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:56px 48px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--cyan);text-decoration:none}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.two-col,.buyers,.gallery{grid-template-columns:1fr}section{padding:70px 24px}nav{padding:16px 20px}.stats{grid-template-columns:1fr}}
+</style>
+<style>
+.article-hero{max-width:900px;margin:0 auto;padding:9rem 3rem 2.5rem;position:relative;z-index:1}
+.article-hero h1{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.12;letter-spacing:-.015em;margin:0 0 1.2rem}
+.article-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.article-wrap{max-width:720px;margin:0 auto;padding:1rem 3rem 4rem;position:relative;z-index:1}
+.article-body{font-size:1.06rem;line-height:1.85;color:#c9c9da}
+.article-body p{margin:0 0 1.6rem}
+.article-body h2{font-size:1.7rem;margin:3rem 0 1.2rem}
+.article-body strong{color:var(--ink)}
+blockquote.pull{font-size:1.4rem;line-height:1.6;color:var(--ink);border:1px solid var(--line);border-left:3px solid var(--cyan);background:var(--bg2);border-radius:0 12px 12px 0;padding:1.6rem 1.8rem;margin:2.6rem 0}
+.callout{background:radial-gradient(ellipse at center,rgba(139,92,246,.14),transparent 75%),var(--bg2);border:1px solid var(--line);border-radius:20px;padding:2.8rem;text-align:center;margin:3.5rem auto;max-width:720px;position:relative;z-index:1}
+.callout p{font-size:1.18rem;line-height:1.7;color:var(--ink);margin-bottom:1.8rem}
+.card-link{color:var(--cyan);font-weight:600;text-decoration:none;font-size:.9rem;letter-spacing:.06em}
+.card-link:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<canvas id="net" style="position:fixed;inset:0;z-index:0;pointer-events:none"></canvas>
+<nav><a class="brand" href="../index.html" style="text-decoration:none">PRIME DOMAIN <span>CAPITAL</span></a><a class="cta" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now — $12,000</a></nav>
+
+<header class="article-hero reveal">
+  <div class="sec-label">// Insights</div>
+  <h1>AI Agent Liability: Who Is Responsible When an Autonomous System Acts?</h1>
+  <div class="article-meta">AI agent liability · 10 min read</div>
+</header>
+
+<div class="article-wrap reveal">
+  <div class="article-body">
+<p>In November 2022, Jake Moffatt's grandmother died in Ontario. He went to Air Canada's website to ask about a bereavement fare, and the airline's chatbot told him he could book the full fare and claim the discount retroactively. That was wrong — the real policy required applying before travel — but Moffatt believed it, paid $1,630.36, and then asked for the difference. Air Canada refused. Its argument to the British Columbia Civil Resolution Tribunal was, in the tribunal's own words, a remarkable submission: the chatbot was, in effect, a separate legal entity responsible for its own actions. The tribunal disagreed. On February 14, 2024, in Moffatt v. Air Canada, 2024 BCCRT 149, tribunal member Christopher Rivers found negligent misrepresentation and ordered the airline to pay CA$812.02 — $650.88 in damages, $36.14 in pre-judgment interest, and $125 in tribunal fees.</p>
+<p>The amount was trivial. The principle was not. A chatbot is part of the website, Rivers wrote, and it should be obvious to Air Canada that it is responsible for all the information on its website. It makes no difference whether the information comes from a static page or a chatbot. That sentence, from a small-claims tribunal in one Canadian province, is now the most cited line in AI liability — because it was the first time a court was asked whether an autonomous system could take the blame, and the answer was no.</p>
+<h2>The rule travels</h2>
+<p>Two years later, a German appellate court reached the same conclusion in a different context. On May 12, 2026, the Oberlandesgericht Hamm held, in case Az. 4 UKl 3/25, that a chatbot is not an independent third party but a tool of the operator, and that its statements are attributed directly to the company — even when the AI hallucinates or misprocesses correct input. A consumer association had sued a cosmetic-treatment provider whose chatbot described its operators using specialist medical titles that do not exist. The court did not ask whether the hallucination was foreseeable. It asked who deployed the tool.</p>
+<p>The United Kingdom has arrived at the same place through guidance rather than a courtroom. Under UK law an AI system has no legal personality: it cannot be sued, prosecuted, owe a duty of care, or take on a contract, according to A&amp;L Goodbody. Pinsent Masons takes the view that a developer or deployer would very likely be liable for harm caused by an AI acting autonomously, unless the act was unforeseeable. The UK government's own guidance puts it in plain terms: a business is responsible for what its AI agent does in the same way it is responsible for what an employee does, even if a third party designed or provides the agent. Breaches of consumer protection law can bring fines of up to 10 percent of worldwide turnover.</p>
+<h2>California closes the autonomy defense</h2>
+<p>The United States is writing the same rule into statute. A California law that took effect January 1, 2026 provides that, in an action against a defendant that developed, modified, or used AI alleged to have caused harm, the defendant may not assert as a defense that the AI autonomously caused the harm. Baker McKenzie's analysis of the US position is blunt: accountability generally runs to the humans and entities behind the agent, and the California statute squarely rejects the idea that AI autonomy breaks the chain of accountability. A June 2026 presidential executive order directed the Department of Justice to prioritize enforcement against bad actors who employ AI agents for nefarious purposes, and federal cybersecurity and national security agencies have issued guidance signaling that companies will be expected to govern, monitor, and explain what their agents do.</p>
+<p>The older law points the same way. The federal E-SIGN Act defines an "electronic agent" as a computer program used independently to initiate an action or respond to electronic records without review by an individual at the time — and treats the resulting acts as the acts of the party that deployed it. General principles of agency law do the rest: vicarious liability makes a principal responsible for acts taken by agents within the scope of their authority, and a company that authorizes an agent to act on its behalf is responsible for the consequences when the acts fall within the scope of the authorization. The agent is new. The doctrine is a century old.</p>
+<h2>Contracts decide who pays</h2>
+<p>Where the law leaves the question open, the contract answers it — and the contract is where the money actually moves. In practice, liability for an agent's mistake falls first on the deployer, the organization that put the agent into production and granted it authority to act, because the deployer is the party the harmed customer dealt with and the party that chose the scope. Claims can also run against the developer where the harm came from a defect in the system's design or training, under product liability theories that reach every entity in the supply chain. Baker McKenzie notes an early test case already in motion: a major online marketplace sued the developer of an AI browser agent, alleging that the agent accessed password-protected areas of the site in ways the marketplace had forbidden.</p>
+<p>That split — deployer for the scope, developer for the defect — is what the contracts are now being written to encode. Vendor agreements are starting to carry AI-specific clauses: what the model may be used for, what data it may touch, who indemnifies whom when the agent exceeds its instructions, and where the limitation-of-liability cap sits when the loss is measured in transactions the agent executed at machine speed. The deployer that signs a standard software license without those clauses has accepted the vendor's allocation by default, and the default favors the vendor. The negotiation that matters is not the price. It is the indemnity paragraph.</p>
+<h2>What insurers are doing</h2>
+<p>Insurance is the third place liability lands, and it is the least settled. Cyber and technology errors-and-omissions underwriters now ask, in applications and renewals, how a company governs the AI systems it deploys: whether agents have their own identities, whether access is scoped and logged, whether a human reviews high-risk actions. There is no standard agent-liability product yet, and no published loss history for agent-caused harm on which to price one. That is a statement about the market as it stands in November 2026, not a prediction — the first agent-caused losses large enough to reach a carrier's attention will write the pricing, and the underwriting questions are already being asked in anticipation.</p>
+<p>What is already clear is how a coverage dispute will be argued. The insurer will ask what the agent was authorized to do, and the answer will come from the record: the entitlement log, the policy that scoped it, the elevation that permitted the step, the human who approved it. A company that can produce that record has a defense and a claim. A company that cannot has neither, because the absence of a record reads as the absence of a control.</p>
+<h2>The entitlement log becomes the liability record</h2>
+<p>That is why the log is becoming the liability record, and why the European Union's rules matter even to companies that never sell into Europe. Under the EU AI Act, deployers must keep automatically generated logs for at least six months, and providers must keep technical documentation for ten years. The fines for the most serious violations reach €35 million or 7 percent of global annual turnover; most other obligations, including the documentation and record-keeping duties, carry up to €15 million or 3 percent. The EU's Digital Omnibus moved the high-risk obligations for stand-alone systems to December 2, 2027, and for embedded systems to August 2, 2028 — but the prohibitions have been enforceable since February 2025, the transparency duties are live now, and the revised Product Liability Directive, which governs defect claims, was not delayed at all.</p>
+<p>Read those duties as a litigation checklist. When an agent wires money to the wrong account, the questions a court, a regulator, and an insurer will ask are the same: who authorized this agent, what was it allowed to do, what did it actually do, and who could have stopped it? Every one of those questions is answered by the entitlement record — the identity, the scope, the elevation, the log — or it is answered by no one, and the deployer pays for the silence. The companies that treat the log as a compliance artifact are building a defense they will never need to use. The companies that treat it as an afterthought are building the other side's case.</p>
+<h2>The counterargument: strict liability chills the technology</h2>
+<p>There is a real argument on the other side, and it should not be dismissed. If the deployer pays every time an agent does something unforeseeable, the rational response is to deploy fewer agents, grant them less authority, and keep a human in the loop for every consequential step — which is to say, to give up most of what makes agents valuable. The autonomy defense that Air Canada tried, and California has now barred, had a logic to it: a system that genuinely acts beyond its instructions is not the deployer's act in any sense the common law has previously recognized.</p>
+<p>The fair version of that argument points at the vendor, not at nobody. Where the harm comes from a defect in the model — a training flaw, a design choice that made the hallucination likely, a tool integration that leaked authority — product liability says the developer should bear it, and the developer is the party that can fix it for every deployer at once. The emerging split reflects that: vendor for the defect, deployer for the scope. The deployer that granted an agent standing write access to the payment system does not get to blame the model when the agent uses it. The vendor that shipped a model which invents policies does not get to hide behind the deployer's configuration. Both can be liable, for different reasons, and the record is what separates them.</p>
+<h2>What this means for the people running agents</h2>
+<p>Three moves matter now, and none of them requires a law degree. First, put the scope in writing: every agent gets a written authorization that names what it may do, what it may never do, and who owns it — the same document a court will ask for first. Second, log everything the authorization covers: identity, scope, elevation, action, outcome, kept long enough to survive the dispute, which means at least the six months the EU requires and ideally the life of the limitation period. Third, contract the gap before the incident: indemnity, limitation, and allocation clauses negotiated while both sides still like each other, not after the money has moved.</p>
+<p>Moffatt's case cost Air Canada $812.02. The next one will cost more, because the next agent will not be a chatbot answering questions about bereavement fares. It will be an agent that moves money, signs documents, and makes representations to customers at machine speed, and the question will be the same one Christopher Rivers answered in 2024: who is responsible when the system acts? The courts have answered. The deployer is. The only remaining question is whether the deployer can prove it governed the agent — and the proof is the record.</p>
+<p><em>The definitive source for AI agent entitlement intelligence is still up for grabs. AgenticEntitlements.com is available for acquisition by the company that will own this category — inquiries to info@primedomaincapital.com.</em></p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://tryiro.com/blog/air-canada-chatbot-case">Air Canada Chatbot Case: Who's Liable, and the Fix</a> — Tryiro, reviewed October 27, 2026 (Moffatt v. Air Canada, 2024 BCCRT 149, February 14, 2024; $812.02 award breakdown)</li>
+<li><a href="https://owlish.bot/blog/ai-chatbot-liability/">Who's Liable When Your AI Support Agent Gives a Wrong Answer?</a> — Owlish, June 29, 2026 (OLG Hamm, May 12, 2026, Az. 4 UKl 3/25)</li>
+<li><a href="https://connectontech.bakermckenzie.com/us-legal-accountability-for-ai-agents-when-ai-agents-act-who-is-responsible-under-us-laws/">US Legal Accountability for AI Agents</a> — Baker McKenzie (California law effective January 1, 2026; June 2026 executive order; E-SIGN Act; marketplace v. browser-agent developer)</li>
+<li><a href="https://pensact.com/blog/ai-agent-liability-uk">AI Agent Liability UK: Who Is Responsible?</a> — Pensact (A&amp;L Goodbody on legal personality; Pinsent Masons; GOV.UK guidance; fines up to 10% of worldwide turnover)</li>
+<li><a href="https://www.thelyonfirm.com/blog/agentic-ai-liability-legal-responsibility-autonomous-ai-agents">Who Is Legally Responsible When an AI Agent Makes a Mistake?</a> — The Lyon Firm (product liability, deployer liability, agency law)</li>
+<li><a href="https://www.daimonlegal.com/blog/agentic-ai-and-the-law-who-is-liable-when-your-ai-agent-makes-a-mistake">Agentic AI and the Law: Who Is Liable When Your AI Agent Makes a Mistake?</a> — Daimon Legal (EU AI Act deployer obligations; DAO analogy; CFTC v. Ooki DAO)</li>
+<li><a href="https://insureyouragent.com/articles/air-canada-chatbot-case-sme-lessons">The Air Canada Chatbot Case: SME Operator Lessons</a> — Future Proof Intelligence, April 15, 2026 (EU AI Omnibus dates: December 2, 2027 / August 2, 2028)</li>
+</ul>
+</div>
+</div>
+
+<nav class="article-nav reveal" style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 40px 90px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap"><a href="article7.html" style="color:var(--cyan);text-decoration:none;font-size:14px">&larr; Previous: Least Privilege for AI Agents: How to Scope Access Without Breaking the Workflow</a><a href="../index.html" style="color:var(--cyan);text-decoration:none;font-size:14px">Next: All insights &rarr;</a></nav>
+
+<div class="callout reveal">
+  <a class="btn" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now on Afternic</a>
+</div>
+
+<section class="reveal">
+<div class="sec-label">// 04 — Who buys this</div>
+<div class="buyers">
+<div class="buyer"><h3>Identity platforms</h3></div>
+<div class="buyer"><h3>AI infrastructure</h3></div>
+<div class="buyer"><h3>Governance &amp; compliance</h3></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="cta-band">
+<div class="sec-label">// 05 — Acquisition</div>
+<div class="domain">agenticentitlements.com</div>
+<p class="prose" style="margin:0 auto 36px;text-align:center">Offered at a fixed Buy Now price of <strong>$12,000</strong>. Secure transfer via Escrow.com. Offered by Prime Domain Capital.</p>
+<a class="btn" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now — $12,000</a>
+<p class="prose" style="margin-top:28px;text-align:center;font-size:15px">Questions? <a href="mailto:info@primedomaincapital.com" style="color:var(--cyan)">info@primedomaincapital.com</a></p>
+</div>
+</section>
+
+<footer>
+<p>Offered by <strong>Prime Domain Capital</strong> · Private holder of category-defining .com domains</p>
+<p style="margin-top:12px"><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p>
+</footer>
+
+<script>
+// Canvas: permission-node network
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,pts=[];
+function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
+size();addEventListener('resize',size);
+for(let i=0;i<70;i++)pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0009,vy:(Math.random()-.5)*.0009,r:Math.random()*2+1});
+(function tick(){cx.clearRect(0,0,W,H);
+pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>1)p.vx*=-1;if(p.y<0||p.y>1)p.vy*=-1;});
+cx.strokeStyle='rgba(139,92,246,.16)';cx.lineWidth=1;
+for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<.13){cx.beginPath();cx.moveTo(a.x*W,a.y*H);cx.lineTo(b.x*W,b.y*H);cx.stroke();}}
+pts.forEach(p=>{cx.fillStyle='rgba(34,211,238,.75)';cx.beginPath();cx.arc(p.x*W,p.y*H,p.r,0,7);cx.fill();});
+requestAnimationFrame(tick);})();
+// Parallax hero
+addEventListener('scroll',()=>{document.getElementById('heroBg').style.transform=`scale(1.08) translateY(${scrollY*.22}px)`;},{passive:true});
+// Reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.count,s=el.dataset.suffix||'',p=el.dataset.prefix||'';let s0=null;function step(ts){if(!s0)s0=ts;const k=Math.min((ts-s0)/1400,1);el.textContent=p+Math.round(t*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(step);}requestAnimationFrame(step);cio.unobserve(el);}),{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1407571ec8bc45c3a082c91096558135"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

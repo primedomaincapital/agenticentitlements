@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Least Privilege for AI Agents: How to Scope Access Without Breaking the Workflow | agenticentitlements.com</title>
+<meta name="description" content="Least privilege fails two ways: too tight and the workflow breaks, too loose and the breach spreads. The fix is identity first, just-in-time elevation second, and an audit hook on every step.">
+<link rel="canonical" href="https://agenticentitlements.com/insights/article7">
+<meta property="og:title" content="Least Privilege for AI Agents: How to Scope Access Without Breaking the Workflow">
+<meta property="og:description" content="Least privilege fails two ways: too tight and the workflow breaks, too loose and the breach spreads. The fix is identity first, just-in-time elevation second, and an audit hook on every step.">
+<meta property="og:url" content="https://agenticentitlements.com/insights/article7">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Least Privilege for AI Agents: How to Scope Access Without Breaking the Workflow", "description": "Least privilege fails two ways: too tight and the workflow breaks, too loose and the breach spreads. The fix is identity first, just-in-time elevation second, and an audit hook on every step.", "author": {"@type": "Organization", "name": "Prime Domain Capital"}, "publisher": {"@type": "Organization", "name": "Prime Domain Capital"}, "datePublished": "2026-11-19", "mainEntityOfPage": "https://agenticentitlements.com/insights/article7"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a14;--bg2:#101022;--violet:#8b5cf6;--cyan:#22d3ee;--ink:#f4f4f8;--muted:#9a9ab0;--line:rgba(139,92,246,.22)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(10,10,20,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .brand{font-weight:700;letter-spacing:.14em;font-size:13px;text-transform:uppercase}
+nav .brand span{color:var(--cyan)}
+nav a.cta{background:var(--violet);color:#fff;text-decoration:none;padding:12px 28px;border-radius:100px;font-weight:600;font-size:14px;transition:.3s}
+nav a.cta:hover{background:var(--cyan);color:#06121a;transform:translateY(-2px)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover;opacity:.34;transform:scale(1.08)}
+#net{position:absolute;inset:0;z-index:1}
+.hero-inner{position:relative;z-index:2;max-width:1000px;padding:120px 32px 80px}
+.kicker{font-family:'IBM Plex Mono',monospace;color:var(--cyan);letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:28px}
+h1{font-size:clamp(44px,7.5vw,104px);font-weight:700;line-height:1.02;letter-spacing:-.02em;margin-bottom:28px}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(17px,2.2vw,22px);color:var(--muted);max-width:720px;margin:0 auto 44px;line-height:1.65}
+.price-row{display:flex;gap:20px;justify-content:center;align-items:center;flex-wrap:wrap}
+.price{font-size:40px;font-weight:700}
+.price small{font-size:14px;color:var(--muted);font-weight:400;display:block;letter-spacing:.1em;text-transform:uppercase}
+.btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;padding:18px 52px;border-radius:100px;font-weight:700;font-size:17px;transition:.3s;border:none;cursor:pointer}
+.btn:hover{background:var(--cyan);color:#06121a;transform:translateY(-3px);box-shadow:0 20px 50px rgba(34,211,238,.35)}
+section{padding:110px 48px;max-width:1240px;margin:0 auto}
+.sec-label{font-family:'IBM Plex Mono',monospace;color:var(--violet);letter-spacing:.3em;font-size:12px;text-transform:uppercase;margin-bottom:20px}
+h2{font-size:clamp(32px,4.5vw,58px);font-weight:700;line-height:1.1;margin-bottom:28px;letter-spacing:-.01em}
+.prose{color:var(--muted);font-size:18px;line-height:1.8;max-width:760px}
+.prose strong{color:var(--ink)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:56px}
+.two-col img{width:100%;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:64px}
+.stat{background:var(--bg2);padding:52px 32px;text-align:center}
+.stat .num{font-size:52px;font-weight:700;color:var(--cyan)}
+.stat .lbl{color:var(--muted);margin-top:12px;font-size:15px;line-height:1.5}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.gallery figure{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/3}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.07)}
+.gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(5,5,12,.9));font-size:14px;color:#dfe}
+.buyers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.buyer{border:1px solid var(--line);border-radius:18px;padding:40px 32px;background:var(--bg2);transition:.3s}
+.buyer:hover{border-color:var(--violet);transform:translateY(-6px)}
+.buyer h3{font-size:21px;margin-bottom:14px;color:var(--cyan)}
+.buyer p{color:var(--muted);font-size:15.5px;line-height:1.7}
+.cta-band{text-align:center;background:radial-gradient(ellipse at center,rgba(139,92,246,.16),transparent 70%);border:1px solid var(--line);border-radius:28px;padding:90px 40px;margin-top:40px}
+.cta-band .domain{font-family:'IBM Plex Mono',monospace;font-size:clamp(24px,4vw,44px);color:var(--cyan);margin-bottom:16px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:56px 48px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--cyan);text-decoration:none}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.two-col,.buyers,.gallery{grid-template-columns:1fr}section{padding:70px 24px}nav{padding:16px 20px}.stats{grid-template-columns:1fr}}
+</style>
+<style>
+.article-hero{max-width:900px;margin:0 auto;padding:9rem 3rem 2.5rem;position:relative;z-index:1}
+.article-hero h1{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.12;letter-spacing:-.015em;margin:0 0 1.2rem}
+.article-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.article-wrap{max-width:720px;margin:0 auto;padding:1rem 3rem 4rem;position:relative;z-index:1}
+.article-body{font-size:1.06rem;line-height:1.85;color:#c9c9da}
+.article-body p{margin:0 0 1.6rem}
+.article-body h2{font-size:1.7rem;margin:3rem 0 1.2rem}
+.article-body strong{color:var(--ink)}
+blockquote.pull{font-size:1.4rem;line-height:1.6;color:var(--ink);border:1px solid var(--line);border-left:3px solid var(--cyan);background:var(--bg2);border-radius:0 12px 12px 0;padding:1.6rem 1.8rem;margin:2.6rem 0}
+.callout{background:radial-gradient(ellipse at center,rgba(139,92,246,.14),transparent 75%),var(--bg2);border:1px solid var(--line);border-radius:20px;padding:2.8rem;text-align:center;margin:3.5rem auto;max-width:720px;position:relative;z-index:1}
+.callout p{font-size:1.18rem;line-height:1.7;color:var(--ink);margin-bottom:1.8rem}
+.card-link{color:var(--cyan);font-weight:600;text-decoration:none;font-size:.9rem;letter-spacing:.06em}
+.card-link:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<canvas id="net" style="position:fixed;inset:0;z-index:0;pointer-events:none"></canvas>
+<nav><a class="brand" href="../index.html" style="text-decoration:none">PRIME DOMAIN <span>CAPITAL</span></a><a class="cta" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now — $12,000</a></nav>
+
+<header class="article-hero reveal">
+  <div class="sec-label">// Insights</div>
+  <h1>Least Privilege for AI Agents: How to Scope Access Without Breaking the Workflow</h1>
+  <div class="article-meta">AI agent governance · 9 min read</div>
+</header>
+
+<div class="article-wrap reveal">
+  <div class="article-body">
+<p>At 4:12 on a Friday afternoon, a finance agent stopped halfway through the month-end close. It had reconciled 311 invoices, flagged three duplicates, and then hit the one step it could not do: post the adjusting entries. Its just-in-time elevation had expired at 4 p.m., the human approver was on a train, and the close slipped to Monday. In another company the same week, a support agent with standing write access to the customer database did the opposite — it finished the job nobody asked it to do, emailing a customer list to a vendor whose address it had guessed from a thread. One agent could do too little. The other could do too much. Both failures had the same cause: nobody had scoped what the agent was allowed to touch, and nobody had built the mechanism that would have caught it.</p>
+<p>Least privilege for AI agents is the oldest idea in security applied to the newest kind of actor. The principle has not changed since the 1970s: give each actor only the access its task needs, for only as long as it needs it, and take it back when the task ends. What has changed is that the actor now decides for itself what to do next, which means the scoping cannot live in a policy document. It has to live in the request path, enforced by machinery the model cannot talk its way around.</p>
+<h2>Start with identity, not permissions</h2>
+<p>Permissions attached to a borrowed login are not permissions at all. An agent running on a developer's credentials inherits the developer's authority, and every action it takes is indistinguishable from the human's. The fix that every serious framework now starts with is a separate identity for each agent, with its own credential lifecycle and a named human owner. NIST's 2026 guidance, "Design Tenets for Agent Identity Management Systems," states it as the first of ten tenets — distinct agent identification — and adds the sentence that has become the field's motto: guardrails alone are insufficient. Deterministic identity, dynamic authorization, and token attenuation must sit outside the language model, not inside it.</p>
+<p>The vendors have spent 2026 building exactly that. Okta for AI Agents became generally available in May 2026, with Agent SSO following in August; each agent is registered in the Universal Directory as its own identity, next to the employees who own it, and Okta's discovery tooling finds shadow agents — including coding agents such as Claude Code and Cursor — that were never registered at all. Microsoft's Entra Agent ID brings agents inside the same Conditional Access, Identity Protection, and Identity Governance controls that cover human users. IBM shipped Agent Identity with HashiCorp Vault 2.2 in October 2026, registering agents in a central inventory with ownership, risk classification, and approved tool connections, and issuing short-lived credentials from Vault so each agent can perform only the actions it was assigned.</p>
+<h2>Scope by role and task, not by person</h2>
+<p>Once the agent has its own identity, the scoping question becomes concrete: what may this agent do, to which systems, for which purpose? The working answer is roles defined by task, not by the human who deployed the agent. A research agent reads. A transacting agent moves money within a limit. An approving agent signs off, and never the same agent that requested. NIST's third tenet — least and zero standing privilege — makes the separation explicit: agents hold no persistent rights while idle, get only the minimum scope a task needs, and are kept from combining privileges that conflict, which is separation of duties stated for software.</p>
+<p>The cleanest formulation comes from the intent model that Oasis Security built its Agentic Access Management product around in November 2025: each request is read as a structured intent covering resource, operation, scope, and purpose, and access is granted against that intent rather than against a standing role. The agent that may read the CRM to draft a renewal quote is not the agent that may write to the billing system, even when both agents belong to the same team and the same human sponsor. Scope is a sentence about a task, not a badge about a person.</p>
+<h2>Just-in-time elevation</h2>
+<p>The hardest part of least privilege is the moment the agent legitimately needs more than its standing scope — the adjusting entry at 4:12 on a Friday. The answer is not to widen the standing role. It is elevation that is just in time, time-limited, and revocable, which is NIST's fourth tenet: no long-lived bearer tokens, no static secrets, runtime checks on every call, and revocation that works while the agent is mid-task.</p>
+<p>Three mechanisms do the work. The first is short-lived tokens scoped to a single task and a single audience, issued at call time and dead minutes later — the pattern Aembit uses when its gateway swaps in a scoped credential so the agent never holds the real secret, and the pattern Ory's Talos, launched in June 2026, was built to replace static API keys with. The second is a gateway in the request path that checks policy before every tool call, which is how Okta's Agent Gateway and Microsoft's Entra controls enforce scope even for MCP servers the agent connects to directly. The third is lifecycle discipline on the identity itself: Microsoft's default inactivity rule, in preview, notifies sponsors and owners after 60 idle days, disables the identity at 90, and deletes it at 455. An agent nobody uses stops existing, instead of lingering with its permissions intact.</p>
+<h2>Audit hooks on every step</h2>
+<p>Scoping without a record is a promise, not a control. Every elevation, every denial, and every action taken under elevated access has to land in a log tied to the agent's identity — who the agent is, who owns it, what it was allowed to do, what it actually did, and when the permission expired. Access reviews then do for agents what they have always done for employees: a regular recertification that asks whether the agent still needs what it holds, with revocation as the default answer.</p>
+<p>The regulators are converging on the same shape from different directions. Canada's OSFI warned in a July 2026 bulletin on generative and agentic AI about over-privileged access and shared or inherited credentials, and pointed to a unique non-human identity per agent, least privilege, just-in-time access with short-lived credentials, logging and review, and periodic recertification; its E-23 guideline takes effect May 1, 2027. Singapore's IMDA published version 1.5 of its agentic AI framework on May 20, 2026, requiring each agent's identity to be unique and cryptographically verifiable, tied to a supervising agent, a human user, or a department, with authority that is scoped, time- or session-bound, and non-transferable. NIST's AI Agent Standards Initiative, announced February 17, 2026, made agent security and identity one of its three pillars. Three jurisdictions, one pattern: identity, scope, expiry, record.</p>
+<h2>When it goes wrong</h2>
+<p>The failure modes are worth naming, because they are the reason least privilege programs stall. The first is over-scoping: permissions drawn so tight that the agent cannot finish ordinary work. The symptoms are easy to spot — agents stalling mid-task, humans pasting credentials into chats to unblock them, teams quietly building shadow agents outside the registry. Every workaround an agent's owner invents to get past a tight scope is a permission granted without a record, which is worse than the broad scope it replaced.</p>
+<p>The second is the opposite: scope creep by accretion. An agent gets a temporary elevation for a project, the project ends, the elevation stays. Six months later the agent holds the sum of every temporary grant it ever received, and nobody reviews the total because nobody reviews combinations. Palo Alto Networks' 2026 survey put machine identities at 109 to 1 against humans; at that ratio, manual review of every agent's permissions is not a process, it is a fantasy. The review has to be automated, scheduled, and tied to the identity lifecycle, or it will not happen.</p>
+<h2>The counterargument: least privilege is a tax on speed</h2>
+<p>The honest objection is that least privilege slows agents down, and the objection is not wrong. An agent that must request elevation for every write action is an agent that stops and waits. A team that scopes every tool call is a team that ships its first agent weeks later than the team that handed the agent the service account and moved on. And there is a real argument that agents need broad read access to be useful at all — an agent that can only see the three records its role names cannot notice the pattern across the other three hundred.</p>
+<p>The answer is to scope the writes and be generous with the reads. Reads are reversible; writes are not. An agent that can read broadly and write narrowly, with elevation for the write step and a human in the loop above a risk threshold, keeps most of the speed and most of the safety. NIST's tenets say the same thing in their own way: human-in-the-loop triggers should route risky actions to the right reviewer without causing consent fatigue, because a human asked to approve everything approves nothing carefully. The tax is real. The way to pay less of it is to charge it only where the damage lives.</p>
+<h2>What to do on Monday</h2>
+<p>Four moves, in order. First, inventory every agent in production, including the ones developers set up without asking — the shadow fleet is where the unscoped access lives. Second, give each agent its own identity with a named human owner, and retire every shared credential and borrowed login the fleet runs on. Third, replace standing write access with just-in-time elevation: short-lived, scoped, logged, and revocable mid-task. Fourth, put the audit hook on every elevation and review the scopes on a schedule, not when something breaks.</p>
+<p>The companies that do this will not notice the difference on a good day. That is the point. Least privilege is invisible when it works — the agent finishes the close, the elevation expires at 4 p.m. because the close is done, and nobody emails a customer list to a stranger. The alternative is also invisible, right up until the Friday it is not.</p>
+<p><em>The definitive source for AI agent entitlement intelligence is still up for grabs. AgenticEntitlements.com is available for acquisition by the company that will own this category — inquiries to info@primedomaincapital.com.</em></p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.okta.com/en-gb/blog/ai/nist-agent-identity-tenets-security-checklist/">NIST Agent Identity Tenets: Why Guardrails Fail &amp; How CISOs Enforce IAM</a> — Okta (NIST 10 design tenets, Okta for AI Agents GA May 2026, Agent SSO August 2026)</li>
+<li><a href="https://minerva.studio/answers/ai-agent-identity">AI Agent Identity: What It Is and How to Manage It</a> — Minerva Studio, updated November 16, 2026 (Microsoft Entra Agent ID lifecycle 60/90/455 days, OSFI July 2026 bulletin, IMDA framework v1.5)</li>
+<li><a href="https://bipdallas.com/public/index.php/ibm-aims-to-bring-ai-agent-sprawl-under-enterprise-control">IBM Targets AI Agent Sprawl with Identity Controls</a> — October 29, 2026 (IBM Agent Identity with HashiCorp Vault 2.2; Gartner: 150,000 agents per Fortune 500 enterprise by 2028)</li>
+<li><a href="https://reverbico.com/blog/top-ai-agent-identity-and-access-management-platforms/">Top AI Agent Identity and Access Management Platforms 2027</a> — Reverb (Okta, Entra Agent ID, Palo Alto Networks Idira May 2026, Astrix, Aembit, Ory Talos June 2026)</li>
+<li><a href="https://www.360digitaltransformation.com/blogs/guides/what-is-ai-agent-identity-in-2026-how-non-human-identity-works-agent-identity-vs-service-accounts-and-6-steps-to-govern-it">AI Agent Identity in 2026: How It Works and What It Costs</a> — 360 Digital Transformation (Palo Alto Networks 109:1 machine identities, 2,930 leaders surveyed)</li>
+<li><a href="https://agentopsguide.com/astrix-vs-oasis-vs-aembit/">Astrix vs Oasis vs Aembit: AI Agent Identity in 2026</a> — AgentOpsGuide (Oasis Agentic Access Management, intent-based access, November 19, 2025)</li>
+</ul>
+</div>
+</div>
+
+<nav class="article-nav reveal" style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 40px 90px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap"><a href="article6.html" style="color:var(--cyan);text-decoration:none;font-size:14px">&larr; Previous: How Much Does It Cost to Govern a Fleet of AI Agents?</a><a href="article8.html" style="color:var(--cyan);text-decoration:none;font-size:14px">Next: AI Agent Liability: Who Is Responsible When an Autonomous System Acts? &rarr;</a></nav>
+
+<div class="callout reveal">
+  <a class="btn" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now on Afternic</a>
+</div>
+
+<section class="reveal">
+<div class="sec-label">// 04 — Who buys this</div>
+<div class="buyers">
+<div class="buyer"><h3>Identity platforms</h3></div>
+<div class="buyer"><h3>AI infrastructure</h3></div>
+<div class="buyer"><h3>Governance &amp; compliance</h3></div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="cta-band">
+<div class="sec-label">// 05 — Acquisition</div>
+<div class="domain">agenticentitlements.com</div>
+<p class="prose" style="margin:0 auto 36px;text-align:center">Offered at a fixed Buy Now price of <strong>$12,000</strong>. Secure transfer via Escrow.com. Offered by Prime Domain Capital.</p>
+<a class="btn" href="https://www.afternic.com/domain/agenticentitlements.com">Buy Now — $12,000</a>
+<p class="prose" style="margin-top:28px;text-align:center;font-size:15px">Questions? <a href="mailto:info@primedomaincapital.com" style="color:var(--cyan)">info@primedomaincapital.com</a></p>
+</div>
+</section>
+
+<footer>
+<p>Offered by <strong>Prime Domain Capital</strong> · Private holder of category-defining .com domains</p>
+<p style="margin-top:12px"><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></p>
+</footer>
+
+<script>
+// Canvas: permission-node network
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,pts=[];
+function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;}
+size();addEventListener('resize',size);
+for(let i=0;i<70;i++)pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0009,vy:(Math.random()-.5)*.0009,r:Math.random()*2+1});
+(function tick(){cx.clearRect(0,0,W,H);
+pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>1)p.vx*=-1;if(p.y<0||p.y>1)p.vy*=-1;});
+cx.strokeStyle='rgba(139,92,246,.16)';cx.lineWidth=1;
+for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<.13){cx.beginPath();cx.moveTo(a.x*W,a.y*H);cx.lineTo(b.x*W,b.y*H);cx.stroke();}}
+pts.forEach(p=>{cx.fillStyle='rgba(34,211,238,.75)';cx.beginPath();cx.arc(p.x*W,p.y*H,p.r,0,7);cx.fill();});
+requestAnimationFrame(tick);})();
+// Parallax hero
+addEventListener('scroll',()=>{document.getElementById('heroBg').style.transform=`scale(1.08) translateY(${scrollY*.22}px)`;},{passive:true});
+// Reveals
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.count,s=el.dataset.suffix||'',p=el.dataset.prefix||'';let s0=null;function step(ts){if(!s0)s0=ts;const k=Math.min((ts-s0)/1400,1);el.textContent=p+Math.round(t*(1-Math.pow(1-k,3)))+s;if(k<1)requestAnimationFrame(step);}requestAnimationFrame(step);cio.unobserve(el);}),{threshold:.4});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "1407571ec8bc45c3a082c91096558135"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
