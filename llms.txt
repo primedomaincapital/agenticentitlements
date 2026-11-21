@@ -1,0 +1,15 @@
+# agenticentitlements.com — The Permission Layer for the Agent Economy
+> The category-defining domain for AI agent permissions, entitlements, and governance — the access-control layer the agent economy cannot ship without.
+> It publishes research on AI agent permissions, entitlements, and governance.
+> The agenticentitlements.com domain is for sale at $12,000 (Buy Now) via Afternic, secured by Escrow.com.
+
+## Key pages
+- [agenticentitlements.com](https://agenticentitlements.com/)
+- [Market data](https://agenticentitlements.com/market-data)
+- [AI Agent Permissions: The Security Layer Nobody's Talking About](https://agenticentitlements.com/insights/article1)
+- [Entitlement Management for Autonomous Systems](https://agenticentitlements.com/insights/article2)
+- [Who Authorized That? Governance for AI Agents](https://agenticentitlements.com/insights/article3)
+- [AI Agent Liability: Who Is Responsible When an Autonomous System Acts?](https://agenticentitlements.com/insights/article8)
+
+## Optional
+- [Sitemap](https://agenticentitlements.com/sitemap.xml)
